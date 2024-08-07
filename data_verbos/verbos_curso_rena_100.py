@@ -11,92 +11,6 @@
 #url de rena
 #https://www.italki.com/es/teacher/6823291/japanese
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 verbos = [
     {"kanji": "食べる", "hiragana": "たべる", "romaji": "taberu", "es": "comer", "en": "eat"},
     {"kanji": "見る", "hiragana": "みる", "romaji": "miru", "es": "ver", "en": "see"},
@@ -233,39 +147,11 @@ print(f"Verbo: {verbo_ejemplo.kanji} ({verbo_ejemplo.romaji}) - Español: {verbo
 
 
 
-
-
-verbo_ejemplo.speak('es')
-
-
-verbo_ejemplo.speak('jp')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+for verbo in verbos_objetos:
+    #print(verbo["romaji"])
+    print(f"Verbo: {verbo.kanji} ({verbo.romaji}) - Español: {verbo.es}, Inglés: {verbo.en}")
+    verbo.speak('es')
+    verbo.speak('jp')
 
 
 
