@@ -2,6 +2,7 @@
 from sqlalchemy import create_engine, Column, Integer, String, inspect
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from data_verbos import verbos
 
 # Usar sqlalchemy.orm.declarative_base() en lugar de sqlalchemy.ext.declarative.declarative_base()
 Base = declarative_base()
@@ -40,22 +41,6 @@ class Database:
             session.add(nuevo_verbo)
         session.commit()
         session.close()
-
-# Lista de verbos
-verbos = [
-    {"kanji": "食べる", "hiragana": "たべる", "romaji": "taberu", "es": "comer", "en": "eat"},
-    {"kanji": "見る", "hiragana": "みる", "romaji": "miru", "es": "ver", "en": "see"},
-    {"kanji": "見せる", "hiragana": "みせる", "romaji": "miseru", "es": "mostrar", "en": "show"},
-    {"kanji": "話す", "hiragana": "はなす", "romaji": "hanasu", "es": "hablar", "en": "speak"},
-    {"kanji": "聞く", "hiragana": "きく", "romaji": "kiku", "es": "escuchar", "en": "listen"},
-    {"kanji": "開ける", "hiragana": "あける", "romaji": "akeru", "es": "abrir", "en": "open"},
-    {"kanji": "閉める", "hiragana": "しめる", "romaji": "shimeru", "es": "cerrar", "en": "close"},
-    {"kanji": "飲む", "hiragana": "のむ", "romaji": "nomu", "es": "beber", "en": "drink"},
-    {"kanji": "働く", "hiragana": "はたらく", "romaji": "hataraku", "es": "trabajar", "en": "work"},
-    {"kanji": "休む", "hiragana": "やすむ", "romaji": "yasumu", "es": "descansar", "en": "rest"},
-    {"kanji": "読む", "hiragana": "よむ", "romaji": "yomu", "es": "leer", "en": "read"},
-    {"kanji": "書く", "hiragana": "かく", "romaji": "kaku", "es": "escribir", "en": "write"},
-]
 
 # Crear una instancia de la base de datos
 db = Database()
