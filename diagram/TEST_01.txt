@@ -1,1 +1,47 @@
 UNA TABLA QUE GUARDA VERBOS EN JAPONES, OTRA QUE GUARDA VERBOS EN INGLES Y OTRA QUE GUARDA VERBOS EN ESPAÑOL, LAS TABLAS SE LLAMAN verbos_en verbos_es verbos_jp
+
+SEGUNDO INTENTO
+diagrama de clases, tiene tres clases, cada una hereda de base-class, 
+la primera clase se llama verbos_jp 
+que tiene propiedades: "kanji" "hiragana" "romaji" "es" "en" , 
+tiene metodos para hablar en distintos idiomas el verbo, speak(self, language='jp')
+la segunda clase se llamam verbos_es 
+que tiene propiedades: "kanji" "hiragana" "romaji" "en"
+tiene metodos para hablar en distintos idiomas el verbo, speak(self, language='en')
+la tercera clase se llama verbos_en
+que tiene propiedades: "kanji" "hiragana" "romaji" "es"
+tiene metodos para hablar en distintos idiomas el verbo, speak(self, language='es')
+
+
+tengo 4 gatos: 
+chicho es un gato, es naranjo, es blanco con naranjo, más naranjo que blanco
+manchita es un gato manchado negro con cafe
+la otra es de esas gatas que por sus colores tienen mucha probabilidad de ser gata, es naranja blanca y negra
+el otro es casi blanco solo que tiene alguna masnchas café claro 
+
+
+--------------------
+create a video of a cat playing billiar
+ChatGPT dijo:
+
+That sounds like a fun video idea! Let’s get started with a few questions to make sure we create the perfect video for you.
+
+What’s the primary message or goal of the video? (For example: humor, entertainment, showcasing skills, etc.)
+Who is the target audience for this video?
+What tone or mood are you aiming to achieve? (For example: playful, funny, exciting, etc.)
+How long would you like the video to be? (The default length is 20 seconds, but I can adjust this based on your preference.)
+Let me know your thoughts so we can move forward!
+
+
+the primary message or goal of the video is: humor
+the target audience for this video: kids
+tone or mood i aiming to achieve: funny
+i would you like the video to be 20 seconds
+
+----------------
+video of a cat playing billiar
+Primary goal: Humor
+Target audience: Children
+Tone/mood: Funny and playful
+Length: 20 seconds
+for the voiceover:female voice 
