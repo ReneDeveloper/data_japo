@@ -52,8 +52,9 @@ print(f"Verbo: {verbo_ejemplo.kanji} ({verbo_ejemplo.romaji}) - Español: {verbo
 for verbo in verbos_objetos:
     #print(verbo["romaji"])
     print(f"Verbo: {verbo.kanji} ({verbo.romaji}) - Español: {verbo.es}, Inglés: {verbo.en}")
-    verbo.speak('es')
+    
     verbo.speak('jp')
+    verbo.speak('es')
 
 
 

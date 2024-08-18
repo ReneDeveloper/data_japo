@@ -21,7 +21,7 @@ el otro es casi blanco solo que tiene alguna masnchas café claro
 
 
 --------------------
-create a video of a cat playing billiar
+create a video of a caricature cat playing billiar
 ChatGPT dijo:
 
 That sounds like a fun video idea! Let’s get started with a few questions to make sure we create the perfect video for you.
@@ -39,7 +39,8 @@ tone or mood i aiming to achieve: funny
 i would you like the video to be 20 seconds
 
 ----------------
-video of a cat playing billiar
+video of a caricature cat with black jockey, playing billiar, standing up
+audio: este es un gato que le gusta jugar
 Primary goal: Humor
 Target audience: Children
 Tone/mood: Funny and playful
