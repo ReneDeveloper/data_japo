@@ -163,9 +163,4 @@ shitsumonsuru
 sanposuru
 denwasuru
 
-
-
-
-
-
 """

@@ -3,7 +3,7 @@ from sqlalchemy import create_engine, Column, Integer, String, inspect
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from data_verbos import verbos
-
+#pyttsx3,sqlalchemy
 # Usar sqlalchemy.orm.declarative_base() en lugar de sqlalchemy.ext.declarative.declarative_base()
 Base = declarative_base()
 

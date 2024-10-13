@@ -1,0 +1,112 @@
+prompt.txt
+--------
+-PROMPT-
+--------
+tengo una folder con codigo que usa python, pero ahora quiero que tenga un ambiente virtual venv, se llamará venv y ya tengo en el git ignore descartada esa carpeta, solo me falta crear la carpeta venv pero debo ahecrlo con la linea de comando en python
+--------
+-SALIDA-
+--------
+
+Para crear un ambiente virtual llamado venv con Python utilizando la línea de comandos, puedes seguir estos pasos:
+
+Navega hasta la carpeta de tu proyecto en la terminal o línea de comandos.
+
+bash
+Copiar código
+cd /ruta/a/tu/proyecto
+Ejecuta el siguiente comando para crear el ambiente virtual llamado venv:
+
+bash
+Copiar código
+python -m venv venv
+Esto creará una carpeta llamada venv dentro de tu proyecto, donde se almacenarán las dependencias de Python del entorno virtual.
+
+Luego, activa el entorno virtual. Dependiendo del sistema operativo, utiliza uno de estos comandos:
+
+Windows:
+
+bash
+Copiar código
+.\venv\Scripts\activate
+Linux/MacOS:
+
+bash
+Copiar código
+source venv/bin/activate
+Verifica que el ambiente virtual está activo ejecutando:
+
+bash
+Copiar código
+python --version
+Esto debería mostrar la versión de Python del ambiente virtual.
+
+Con eso ya tendrías el entorno virtual venv creado y activado, listo para instalar tus dependencias sin afectar el entorno global de Python.
+
+--------
+-PROMPT-
+--------
+tengo esta folder y tengo el MINGW64 en esa carpeta: C:\Users\risilvac\__REPOS__\data_japo
+
+--------
+-SALIDA-
+--------
+Si estás usando MINGW64 (parte de Git Bash) en la carpeta C:\Users\risilvac\__REPOS__\data_japo, puedes seguir estos pasos para crear y activar el entorno virtual venv desde allí:
+
+Abre Git Bash (MINGW64).
+
+Navega a la carpeta de tu proyecto:
+
+bash
+Copiar código
+cd /c/Users/risilvac/__REPOS__/data_japo
+(Nota: En Git Bash, las rutas de Windows usan / y c: en lugar de C:).
+
+Ejecuta el comando para crear el ambiente virtual venv:
+
+bash
+Copiar código
+python -m venv venv
+Activa el entorno virtual con:
+
+bash
+Copiar código
+source venv/Scripts/activate
+Si lo prefieres, también puedes hacerlo con:
+
+bash
+Copiar código
+. venv/Scripts/activate
+Ahora deberías ver (venv) al inicio de la línea de comandos, lo que indica que el entorno virtual está activo.
+
+Con esto, ya estarías listo para instalar dependencias y continuar trabajando en tu proyecto con el entorno virtual activo.
+
+
+------------------------------------------------
+CAMBIAR LA RUTA DE PYTHON EN VISUAL STUDIO CODE:
+------------------------------------------------
+I have been using Visual Studio Code for a while now and found an another way to show virtual environments in Visual Studio Code.
+
+Go to the parent folder in which venv is there through a command prompt.
+
+Type code . and Enter. [It is working on both Windows and Linux for me.]
+
+That should also show the virtual environments present in that folder.
+
+Original Answer
+
+I almost run into same problem every time I am working on Visual Studio Code using venv. I follow the below steps:
+
+Go to menu File → Preferences → Settings.
+
+Click on Workspace settings.
+
+Under Files:Association, in the JSON: Schemas section, you will find Edit in settings.json. Click on that.
+
+Update "python.defaultInterpreterPath": "Your_venv_path/bin/python" under workspace settings. (For Windows): Update "python.defaultInterpreterPath": "Your_venv_path\Scripts\python.exe" under workspace settings.
+
+Restart Visual Studio Code in case if it still doesn't show your venv.
+
+Note: Use python.pythonPath instead of python.defaultInterpreterPath for older versions.
+
+
+

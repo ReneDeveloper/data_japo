@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\data_verbos"
+    "\\data_verbos",
+    "\\diagram"
   ],
-  "SelectedNode": "\\data_verbos\\verbos_curso_rena_100.py",
+  "SelectedNode": "\\data_verbos\\data_verbos.py",
   "PreviewInSolutionExplorer": false
 }
