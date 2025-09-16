@@ -12,7 +12,6 @@
 #https://www.italki.com/es/teacher/6823291/japanese
 
 
-
 from data_verbos import verbos
 
 # Ahora puedes utilizar el arreglo `verbos` en tu código
@@ -40,25 +39,44 @@ class Verbo:
             engine.say(self.romaji)
         engine.runAndWait()
 
+    def id_(self):
+        return str (self.id)
+
+    def speak2(self, language='es'):
+        engine = pyttsx3.init()
+        if language == 'es':
+            engine.say("número " + str(self.id))
+            engine.runAndWait()
+            engine.say(self.es)
+        elif language == 'en':
+            engine.say(self.en)
+        elif language == 'jp':
+            engine.say(self.romaji)
+        engine.runAndWait()
+
+    def toString(self):
+        string_ = f"""V{self.id_()}:{self.es} |
+        {self.kanji}|({self.romaji})
+         - Español: {self.es}, Inglés: {self.en}
+         """
+        return string_
+
 # Crear lista de objetos Verbo
-verbos_objetos = [Verbo(id+1, verbo["kanji"], verbo["hiragana"], verbo["romaji"], verbo["es"], verbo["en"]) for id, verbo in enumerate(verbos)]
+verbos_objetos =[
+    Verbo(id+1, verbo["kanji"], verbo["hiragana"], verbo["romaji"], verbo["es"], verbo["en"]) 
+    for id, verbo in enumerate(verbos)
+    ]
 
 # Ejemplo de uso
-verbo_ejemplo = verbos_objetos[0]
-print(f"Verbo: {verbo_ejemplo.kanji} ({verbo_ejemplo.romaji}) - Español: {verbo_ejemplo.es}, Inglés: {verbo_ejemplo.en}")
+#verbo_ejemplo = verbos_objetos[0]
+#print(f"Verbo: {verbo_ejemplo.kanji} ({verbo_ejemplo.romaji}) - Español: {verbo_ejemplo.es}, Inglés: {verbo_ejemplo.en}")
 
-
-
+#INICIO DEL FLUJO
 for verbo in verbos_objetos:
     #print(verbo["romaji"])
-    print(f"Verbo: {verbo.kanji} ({verbo.romaji}) - Español: {verbo.es}, Inglés: {verbo.en}")
-    
-    verbo.speak('jp')
-    verbo.speak('es')
-
-
-
-
+    print(f"Verbo: {verbo.toString()}")
+    verbo.speak2('es')
+    verbo.speak2('jp')
 
 """
 #VERBOS DE RENA
