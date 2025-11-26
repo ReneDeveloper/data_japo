@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor de Texto con Text-to-Speech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-card rounded-lg shadow-lg p-6">
+        <h1 class="text-2xl font-bold text-foreground mb-4 text-center">Traductor de Texto con Voz</h1>
+        
+        <div class="mb-4">
+            <label for="textInput" class="block text-sm font-medium text-foreground mb-2">
+                Ingresa el texto con formato: &lt;es&gt;español&lt;/es&gt;&lt;jp&gt;japonés&lt;/jp&gt;&lt;en&gt;inglés&lt;/en&gt;
+            </label>
+            <textarea 
+                id="textInput" 
+                rows="5" 
+                class="w-full p-3 border border-border rounded-md bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="<es>Hola</es><jp>こんにちは</jp><en>Hello</en>"
+            ></textarea>
+        </div>
+        
+        <button 
+            id="speakButton" 
+            class="w-full bg-primary text-primary-foreground py-2 px-4 rounded-md hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        >
+            Leer Texto
+        </button>
+        
+        <div class="mt-4 p-3 bg-muted rounded-md">
+            <p class="text-sm text-muted-foreground">
+                <strong>Formato esperado:</strong> &lt;es&gt;texto español&lt;/es&gt;&lt;jp&gt;texto japonés&lt;/jp&gt;&lt;en&gt;texto inglés&lt;/en&gt;
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const textInput = document.getElementById('textInput');
+            const speakButton = document.getElementById('speakButton');
+            
+            // Función para extraer texto entre etiquetas
+            function extractTextByTag(text, tag) {
+                const regex = new RegExp(`<${tag}>(.*?)<\/${tag}>`, 'i');
+                const match = text.match(regex);
+                return match ? match[1] : '';
+            }
+            
+            // Función para leer texto con síntesis de voz
+            function speakText(text, lang) {
+                return new Promise((resolve) => {
+                    if (!text) {
+                        resolve();
+                        return;
+                    }
+                    
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.lang = lang;
+                    utterance.onend = resolve;
+                    utterance.onerror = resolve;
+                    
+                    speechSynthesis.speak(utterance);
+                });
+            }
+            
+            // Manejar clic en el botón
+            speakButton.addEventListener('click', async function() {
+                const inputText = textInput.value.trim();
+                
+                if (!inputText) {
+                    alert('Por favor, ingresa algún texto.');
+                    return;
+                }
+                
+                // Extraer textos por idioma
+                const spanishText = extractTextByTag(inputText, 'es');
+                const japaneseText = extractTextByTag(inputText, 'jp');
+                const englishText = extractTextByTag(inputText, 'en');
+                
+                if (!spanishText && !japaneseText && !englishText) {
+                    alert('Formato incorrecto. Usa: <es>texto</es><jp>texto</jp><en>texto</en>');
+                    return;
+                }
+                
+                // Deshabilitar botón durante la reproducción
+                speakButton.disabled = true;
+                speakButton.textContent = 'Leyendo...';
+                
+                try {
+                    // Leer en español
+                    if (spanishText) {
+                        await speakText(spanishText, 'es-ES');
+                    }
+                    
+                    // Leer en japonés (si existe)
+                    if (japaneseText) {
+                        await speakText(japaneseText, 'ja-JP');
+                    }
+                    
+                    // Leer en inglés
+                    if (englishText) {
+                        await speakText(englishText, 'en-US');
+                    }
+                } catch (error) {
+                    console.error('Error con la síntesis de voz:', error);
+                    alert('Error al reproducir el audio. Asegúrate de que tu navegador soporte la síntesis de voz.');
+                } finally {
+                    // Restaurar botón
+                    speakButton.disabled = false;
+                    speakButton.textContent = 'Leer Texto';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

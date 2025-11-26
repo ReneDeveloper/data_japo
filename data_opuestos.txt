@@ -1,0 +1,104 @@
+data_opuestos.txt
+
+1. Arriba / Abajo
+上　うえ — ue
+下　した — shita
+
+2. Subir / Bajar
+上がる — agaru
+下がる — sagaru
+
+3. Aumentar / Disminuir
+増える　ふえる — fueru
+減る　へる — heru
+
+4. Empezar / Terminar
+始める　はじめる — hajimeru
+終わる　おわる — owaru
+
+5. Prender / Apagar
+つける — tsukeru
+けす（消す）— kesu
+
+6. Siempre / Nunca
+いつも — itsumo
+ぜったいに〜ない / けっして〜ない — zettai ni ~ nai / kesshite ~ nai
+
+7. Despertar / Dormir
+起きる　おきる — okiru
+ねる（寝る）— neru
+
+8. Sol / Luna
+太陽　たいよう — taiyō
+月　つき — tsuki
+
+9. Fuego / Agua
+火　ひ — hi
+水　みず — mizu
+
+10. Hombre / Mujer
+男　おとこ — otoko
+女　おんな — onna
+
+11. Derecha / Izquierda
+右　みぎ — migi
+左　ひだり — hidari
+
+12. Entrar / Salir
+入る　はいる — hairu
+出る　でる — deru
+
+13. Comprar / Vender
+
+買う　かう — kau
+
+売る　うる — uru
+
+
+14. Ganar / Perder
+勝つ　かつ — katsu
+負ける　まける — makeru
+
+15. Adelante / Atrás
+前　まえ — mae
+後ろ　うしろ — ushiro
+
+16. Caliente / Frío
+熱い　あつい — atsui
+冷たい　つめたい — tsumetai
+
+17. Grande / Pequeño
+大きい　おおきい — ōkii
+小さい　ちいさい — chiisai
+
+18. Largo / Corto
+長い　ながい — nagai
+短い　みじかい — mijikai
+
+19. Fuerte / Débil
+強い　つよい — tsuyoi
+弱い　よわい — yowai
+
+20. Rápido / Lento
+早い・速い　はやい — hayai
+おそい（遅い）— osoi
+
+21. Claro / Oscuro
+明るい　あかるい — akarui
+暗い　くらい — kurai
+
+22. Caro / Barato
+高い　たかい — takai
+安い　やすい — yasui
+
+23. Fácil / Difícil
+かんたん（簡単）— kantan
+むずかしい（難しい）— muzukashii
+
+24. Feliz / Triste
+うれしい — ureshii
+かなしい（悲しい）— kanashii
+
+25. Vivo / Muerto
+生きている　いきている — ikite iru
+死んでいる　しんでいる — shinde iru
